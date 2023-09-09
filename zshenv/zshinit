@@ -18,6 +18,7 @@ curl https://raw.githubusercontent.com/DCDC-Melo/home/main/.dc.gpg.private.key |
 # gpg --pinentry-mode loopback --import private.key ;
 # export key
 gpg --export-secret-keys --armor ${GPGRECIPIENT} > .dc.gpg.private.key
+gpg -–export --armor ${GPGRECIPIENT} > .dc.gpg.public.key
 # start gpg
 systemctl --user status gpg-agent ; gpgconf --kill gpg-agent ; systemctl --user stop gpg-agent ; systemctl --user start gpg-agent ;
 gpg --list-keys ; gpg --list-secret-keys ; gpg --list-public-keys ;
